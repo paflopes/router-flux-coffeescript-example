@@ -1,15 +1,18 @@
 React = require 'react'
-ReactNative = require 'react-native'
-{ AppRegistry, Text, StyleSheet } = ReactNative
+{ Component } = React
+{ Text } = require 'react-native'
+{ Router, Scene } = require 'react-native-router-flux'
 
-Root = React.createClass
+PageOne = require './PageOne'
+PageTwo = require './PageTwo'
+
+class Root extends Component
   render: ->
-    <Text style={styles.heading}>Hello World!</Text>
-
-styles = StyleSheet.create
-  heading:
-    fontSize: 42
-    textAlign: 'center'
-    marginTop: 50
+    <Router>
+      <Scene key="root">
+        <Scene key="pageOne" component={PageOne} title="PageOne" initial={true} />
+      <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
+      </Scene>
+    </Router>
 
 module.exports = Root

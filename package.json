@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "15.2.1",
-    "react-native": "0.30.0"
+    "react-native": "0.30.0",
+    "react-native-router-flux": "^3.32.0"
   },
   "devDependencies": {
     "coffee-react": "^5.0.0",
